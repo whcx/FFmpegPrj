@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8FA559BC-4DE9-3EEC-91FA-D5D44D11D415}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>FFmpegWin</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/VisualStudioWorkspace/FFmpegWin/bin/Debug/</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\VisualStudioWorkspace\FFmpegWin\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FFmpegWin.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FFmpegWin</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/VisualStudioWorkspace/FFmpegWin/bin/Release/</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\VisualStudioWorkspace\FFmpegWin\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FFmpegWin.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FFmpegWin</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/VisualStudioWorkspace/FFmpegWin/bin//</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\VisualStudioWorkspace\FFmpegWin\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">FFmpegWin.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">FFmpegWin</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/VisualStudioWorkspace/FFmpegWin/bin/RelWithDebInfo/</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\VisualStudioWorkspace\FFmpegWin\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">FFmpegWin.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">FFmpegWin</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avcodec-58.dll D:/VisualStudioWorkspace/FFmpegWin/bin/Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avformat-58.dll D:/VisualStudioWorkspace/FFmpegWin/bin/Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avutil-56.dll D:/VisualStudioWorkspace/FFmpegWin/bin/Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/swresample-3.dll D:/VisualStudioWorkspace/FFmpegWin/bin/Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/swscale-5.dll D:/VisualStudioWorkspace/FFmpegWin/bin/Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>lib\avcodec.lib;lib\avformat.lib;lib\avutil.lib;lib\swresample.lib;lib\swscale.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/VisualStudioWorkspace/FFmpegWin/Debug/FFmpegWin.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/VisualStudioWorkspace/FFmpegWin/bin/Debug/FFmpegWin.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avcodec-58.dll D:/VisualStudioWorkspace/FFmpegWin/bin/Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avformat-58.dll D:/VisualStudioWorkspace/FFmpegWin/bin/Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avutil-56.dll D:/VisualStudioWorkspace/FFmpegWin/bin/Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/swresample-3.dll D:/VisualStudioWorkspace/FFmpegWin/bin/Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/swscale-5.dll D:/VisualStudioWorkspace/FFmpegWin/bin/Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>lib\avcodec.lib;lib\avformat.lib;lib\avutil.lib;lib\swresample.lib;lib\swscale.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/VisualStudioWorkspace/FFmpegWin/Release/FFmpegWin.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/VisualStudioWorkspace/FFmpegWin/bin/Release/FFmpegWin.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avcodec-58.dll D:/VisualStudioWorkspace/FFmpegWin/bin/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avformat-58.dll D:/VisualStudioWorkspace/FFmpegWin/bin/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avutil-56.dll D:/VisualStudioWorkspace/FFmpegWin/bin/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/swresample-3.dll D:/VisualStudioWorkspace/FFmpegWin/bin/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/swscale-5.dll D:/VisualStudioWorkspace/FFmpegWin/bin/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>lib\avcodec.lib;lib\avformat.lib;lib\avutil.lib;lib\swresample.lib;lib\swscale.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/VisualStudioWorkspace/FFmpegWin/MinSizeRel/FFmpegWin.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/VisualStudioWorkspace/FFmpegWin/bin/MinSizeRel/FFmpegWin.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\VisualStudioWorkspace\FFmpegWin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avcodec-58.dll D:/VisualStudioWorkspace/FFmpegWin/bin/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avformat-58.dll D:/VisualStudioWorkspace/FFmpegWin/bin/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/avutil-56.dll D:/VisualStudioWorkspace/FFmpegWin/bin/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/swresample-3.dll D:/VisualStudioWorkspace/FFmpegWin/bin/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake\bin\cmake.exe -E copy_if_different D:/VisualStudioWorkspace/FFmpegWin/lib/swscale-5.dll D:/VisualStudioWorkspace/FFmpegWin/bin/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>lib\avcodec.lib;lib\avformat.lib;lib\avutil.lib;lib\swresample.lib;lib\swscale.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/VisualStudioWorkspace/FFmpegWin/RelWithDebInfo/FFmpegWin.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/VisualStudioWorkspace/FFmpegWin/bin/RelWithDebInfo/FFmpegWin.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\VisualStudioWorkspace\FFmpegWin\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/VisualStudioWorkspace/FFmpegWin/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\CMake\bin\cmake.exe -SD:/VisualStudioWorkspace/FFmpegWin -BD:/VisualStudioWorkspace/FFmpegWin --check-stamp-file D:/VisualStudioWorkspace/FFmpegWin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/VisualStudioWorkspace/FFmpegWin/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\CMake\bin\cmake.exe -SD:/VisualStudioWorkspace/FFmpegWin -BD:/VisualStudioWorkspace/FFmpegWin --check-stamp-file D:/VisualStudioWorkspace/FFmpegWin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/VisualStudioWorkspace/FFmpegWin/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\CMake\bin\cmake.exe -SD:/VisualStudioWorkspace/FFmpegWin -BD:/VisualStudioWorkspace/FFmpegWin --check-stamp-file D:/VisualStudioWorkspace/FFmpegWin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/VisualStudioWorkspace/FFmpegWin/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\CMake\bin\cmake.exe -SD:/VisualStudioWorkspace/FFmpegWin -BD:/VisualStudioWorkspace/FFmpegWin --check-stamp-file D:/VisualStudioWorkspace/FFmpegWin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\3.17.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\VisualStudioWorkspace\FFmpegWin\src\AVBase.cpp" />
+    <ClCompile Include="D:\VisualStudioWorkspace\FFmpegWin\src\FFmpegWin.cpp" />
+    <ClCompile Include="D:\VisualStudioWorkspace\FFmpegWin\src\FrameQueue.cpp" />
+    <ClCompile Include="D:\VisualStudioWorkspace\FFmpegWin\src\TestThread.cpp" />
+    <ClCompile Include="D:\VisualStudioWorkspace\FFmpegWin\src\VideoPlayerWin.cpp" />
+    <ClCompile Include="src\WriteYuv.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\VisualStudioWorkspace\FFmpegWin\ZERO_CHECK.vcxproj">
+      <Project>{545DEFCC-846F-31C0-8205-C8633BFC6363}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\WriteYuv.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

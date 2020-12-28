@@ -1,0 +1,23 @@
+# CMake generation dependency list for this directory.
+C:/CMake/share/cmake-3.17/Modules/CMakeCInformation.cmake
+C:/CMake/share/cmake-3.17/Modules/CMakeCXXInformation.cmake
+C:/CMake/share/cmake-3.17/Modules/CMakeCommonLanguageInclude.cmake
+C:/CMake/share/cmake-3.17/Modules/CMakeGenericSystem.cmake
+C:/CMake/share/cmake-3.17/Modules/CMakeInitializeConfigs.cmake
+C:/CMake/share/cmake-3.17/Modules/CMakeLanguageInformation.cmake
+C:/CMake/share/cmake-3.17/Modules/CMakeRCInformation.cmake
+C:/CMake/share/cmake-3.17/Modules/CMakeSystemSpecificInformation.cmake
+C:/CMake/share/cmake-3.17/Modules/CMakeSystemSpecificInitialize.cmake
+C:/CMake/share/cmake-3.17/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/CMake/share/cmake-3.17/Modules/Compiler/MSVC-C.cmake
+C:/CMake/share/cmake-3.17/Modules/Compiler/MSVC-CXX.cmake
+C:/CMake/share/cmake-3.17/Modules/Platform/Windows-MSVC-C.cmake
+C:/CMake/share/cmake-3.17/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/CMake/share/cmake-3.17/Modules/Platform/Windows-MSVC.cmake
+C:/CMake/share/cmake-3.17/Modules/Platform/Windows.cmake
+C:/CMake/share/cmake-3.17/Modules/Platform/WindowsPaths.cmake
+D:/VisualStudioWorkspace/FFmpegWin/CMakeFiles/3.17.2/CMakeCCompiler.cmake
+D:/VisualStudioWorkspace/FFmpegWin/CMakeFiles/3.17.2/CMakeCXXCompiler.cmake
+D:/VisualStudioWorkspace/FFmpegWin/CMakeFiles/3.17.2/CMakeRCCompiler.cmake
+D:/VisualStudioWorkspace/FFmpegWin/CMakeFiles/3.17.2/CMakeSystem.cmake
+D:/VisualStudioWorkspace/FFmpegWin/CMakeLists.txt

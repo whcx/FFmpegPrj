@@ -1,0 +1,3 @@
+D:/VisualStudioWorkspace/FFmpegWin/CMakeFiles/FFmpegWin.dir
+D:/VisualStudioWorkspace/FFmpegWin/CMakeFiles/ALL_BUILD.dir
+D:/VisualStudioWorkspace/FFmpegWin/CMakeFiles/ZERO_CHECK.dir

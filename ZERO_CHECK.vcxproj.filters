@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\VisualStudioWorkspace\FFmpegWin\CMakeFiles\4652737c63425c9f38bb230a7ab20c64\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{FCBBDF41-E2B5-3237-834D-4D3827C2B5EA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

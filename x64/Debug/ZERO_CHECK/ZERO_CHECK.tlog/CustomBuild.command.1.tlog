@@ -1,0 +1,10 @@
+^D:\VISUALSTUDIOWORKSPACE\FFMPEGWIN\CMAKEFILES\4652737C63425C9F38BB230A7AB20C64\GENERATE.STAMP.RULE
+setlocal
+C:\CMake\bin\cmake.exe -SD:/VisualStudioWorkspace/FFmpegWin -BD:/VisualStudioWorkspace/FFmpegWin --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/VisualStudioWorkspace/FFmpegWin/FFmpegWin.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
