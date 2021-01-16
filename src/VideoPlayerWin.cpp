@@ -25,6 +25,7 @@ extern "C"
 VideoPlayerWin::VideoPlayerWin() {
     m_video_frame_queue.setReleaseHandle(AVBase::releaseVideoFrame, this);
     avformat_network_init();
+    UpdateCurrentState(AV_PLAYER_IDLE);
 }
 
 VideoPlayerWin::~VideoPlayerWin() {
@@ -54,7 +55,6 @@ void VideoPlayerWin::FreeFrame() {
 void VideoPlayerWin::GetYUV(const AVFrame* avFrame)
 {
     int index = 0;
-    m_ready_flag = true;
     m_video_width = avFrame->width;
     m_video_height = avFrame->height;
     if (!yuv_buf)
@@ -94,14 +94,15 @@ void VideoPlayerWin::GetYUV(const AVFrame* avFrame)
     p_WriteYuv.get()->StoreYuvData(yuv_buf.get(), m_video_width, m_video_height);
 
     m_video_frame_queue.enQueue(yuv_buf);
+    m_ready_flag = true;
 }
 
 void VideoPlayerWin::DecodeVideo() {
     m_video_frame_queue.setEnable(true);
     AVPacket* p_packet = av_packet_alloc();
     AVFrame* p_frame = av_frame_alloc();
-   
-    while (prepare_success)
+
+    while (m_current_state & AV_PLAYER_STARTED)
     {
         if (av_read_frame(p_format_context, p_packet) == AVERROR_EOF && loop_playing)
         {
@@ -122,7 +123,7 @@ void VideoPlayerWin::DecodeVideo() {
             while (result >= 0)
             {
                 result = avcodec_receive_frame(p_codec_context, p_frame);
-                //填给解码器的数据不足以解码出一帧数据，所以继续循环。
+                //Not enought data to decode a frame ,so continue looping.
                 if (result == EAGAIN)
                 {
                     break;
@@ -144,22 +145,28 @@ void VideoPlayerWin::DecodeVideo() {
         }
         else if (p_packet->stream_index == i_audio_index)
         {}
-
-        //std::unique_lock<std::mutex> uni_lock(m_mutex_l_yuv);
-        //m_condition_yuv.wait(uni_lock);
-        //uni_lock.unlock();
     }
     m_ready_flag = false;
-
     av_frame_free(&p_frame);
     av_packet_free(&p_packet);
+
+    UpdateCurrentState(AV_PLAYER_PLAYBACK_COMPLETE);
 }
 
 void VideoPlayerWin::Start(const std::string& url) {
-    if (!prepare_success)
+    if (m_current_state & AV_PLAYER_STARTED)
     {
-        //LOGW("VideoPlayerWin.cpp, prepare failed.");
-        return;
+        //LOGD("VideoPlayerWin.cpp, Start ,ongoing...");
+    }
+    else if (m_current_state & (AV_PLAYER_PREPARING | AV_PLAYER_STATE_ERROR))
+    {
+        //LOGD("VideoPlayerWin.cpp, Start ,prepare failed...");
+    }
+    else if (m_current_state & (AV_PLAYER_PREPARED | AV_PLAYER_PLAYBACK_COMPLETE | AV_PLAYER_STOPPED))
+    {
+        UpdateCurrentState(AV_PLAYER_STARTED);
+        std::thread decode_thread(&VideoPlayerWin::DecodeVideo, this);
+        decode_thread.detach();
     }
     //if (!m_asset_async_loader_)
     //{
@@ -170,12 +177,17 @@ void VideoPlayerWin::Start(const std::string& url) {
     //};
 
     //m_asset_async_loader_->PushJob(decodeJob);
-    std::thread decode_thread(&VideoPlayerWin::DecodeVideo, this);
-    decode_thread.detach();
 }
 
 void VideoPlayerWin::Stop(const std::string& url) {
-    prepare_success = false;
+    if (m_current_state & AV_PLAYER_STOPPED)
+    {
+        return;
+    }
+    else if (m_current_state & (AV_PLAYER_STARTED | AV_PLAYER_PREPARED | AV_PLAYER_PLAYBACK_COMPLETE))
+    {
+        UpdateCurrentState(AV_PLAYER_STOPPED);
+    }
 }
 
 /**
@@ -199,71 +211,79 @@ bool VideoPlayerWin::IsReady(const std::string& url) {
 }
 
 void VideoPlayerWin::SetUrl(const std::string& url) {
-    media_url = url;
-    //av_log_set_level(AV_LOG_INFO); //AV_LOG_INFO,AV_LOG_DEBUG
-    
-    AVCodecParameters* p_codec_parameters = nullptr;
-    AVStream* p_avStream = nullptr;
-
-    p_format_context = avformat_alloc_context();
-    if (avformat_open_input(&p_format_context, media_url.c_str(), NULL, NULL) != 0)
+    if (m_current_state & (AV_PLAYER_IDLE | AV_PLAYER_STOPPED))
     {
-        //LOGW("VideoPlayerWin.cpp,avformat_open_input failed.");
-        prepare_success = false;
-        return;
-    }
+        UpdateCurrentState(AV_PLAYER_PREPARING);
+        media_url = url;
+        //av_log_set_level(AV_LOG_INFO); //AV_LOG_INFO,AV_LOG_DEBUG
 
-    if (avformat_find_stream_info(p_format_context, 0) < 0)
-    {
-        //LOGW("VideoPlayerWin.cpp,avformat_find_stream_info failed.");
-        prepare_success = false;
-        return;
-    }
-    i_duration = p_format_context->duration;
+        AVCodecParameters* p_codec_parameters = nullptr;
+        AVStream* p_avStream = nullptr;
 
-    for (int i = 0; i < p_format_context->nb_streams; i++)
-    {
-        p_avStream = p_format_context->streams[i];
-        p_codec_parameters = p_avStream->codecpar;
-
-        if (p_codec_parameters->codec_type == AVMEDIA_TYPE_VIDEO)
+        p_format_context = avformat_alloc_context();
+        if (avformat_open_input(&p_format_context, media_url.c_str(), NULL, NULL) != 0)
         {
-            i_video_index = i;
-            break;
+            //LOGD("VideoPlayerWin.cpp,avformat_open_input failed.");
+            UpdateCurrentState(AV_PLAYER_STATE_ERROR);
+            return;
         }
-    }
-    if (i_video_index == -1)
-    {
-        //LOGW("VideoPlayerWin.cpp,Didn't find a video stream.");
-        prepare_success = false;
-        return;
-    }
-    
-    f_fps = av_q2d(p_avStream->avg_frame_rate);
 
-    AVCodec* p_avCodec = avcodec_find_decoder(p_codec_parameters->codec_id);
-    if (!p_avCodec)
-    {
-        //LOGW("VideoPlayerWin.cpp,Couldn't open codec.");
-        prepare_success = false;
-        return;
-    }
-    p_codec_context = avcodec_alloc_context3(p_avCodec);
-    if (avcodec_parameters_to_context(p_codec_context, p_codec_parameters) < 0)
-    {
-        //LOGW("VideoPlayerWin.cpp,Fill the codec context failed.");
-        prepare_success = false;
-        return;
-    }
+        if (avformat_find_stream_info(p_format_context, 0) < 0)
+        {
+            //LOGD("VideoPlayerWin.cpp,avformat_find_stream_info failed.");
+            UpdateCurrentState(AV_PLAYER_STATE_ERROR);
+            return;
+        }
+        i_duration = p_format_context->duration;
 
-    if (avcodec_open2(p_codec_context, p_avCodec, NULL) != 0)
-    {
-        //LOGW("VideoPlayerWin.cpp,Could't open codec.");
-        prepare_success = false;
-        return;
-    }
+        for (int i = 0; i < p_format_context->nb_streams; i++)
+        {
+            p_avStream = p_format_context->streams[i];
+            p_codec_parameters = p_avStream->codecpar;
 
-    prepare_success = true;
+            if (p_codec_parameters->codec_type == AVMEDIA_TYPE_VIDEO)
+            {
+                i_video_index = i;
+                break;
+            }
+        }
+        if (i_video_index == -1)
+        {
+            //LOGD("VideoPlayerWin.cpp,Didn't find a video stream.");
+            UpdateCurrentState(AV_PLAYER_STATE_ERROR);
+            return;
+        }
+
+        f_fps = av_q2d(p_avStream->avg_frame_rate);
+
+        AVCodec* p_avCodec = avcodec_find_decoder(p_codec_parameters->codec_id);
+        if (!p_avCodec)
+        {
+            //LOGD("VideoPlayerWin.cpp,Couldn't open codec.");
+            UpdateCurrentState(AV_PLAYER_STATE_ERROR);
+            return;
+        }
+        p_codec_context = avcodec_alloc_context3(p_avCodec);
+        if (avcodec_parameters_to_context(p_codec_context, p_codec_parameters) < 0)
+        {
+            //LOGD("VideoPlayerWin.cpp,Fill the codec context failed.");
+            UpdateCurrentState(AV_PLAYER_STATE_ERROR);
+            return;
+        }
+
+        if (avcodec_open2(p_codec_context, p_avCodec, NULL) != 0)
+        {
+            //LOGD("VideoPlayerWin.cpp,Could't open codec.");
+            UpdateCurrentState(AV_PLAYER_STATE_ERROR);
+            return;
+        }
+
+        UpdateCurrentState(AV_PLAYER_PREPARED);
+    }
+    else
+    {
+        //LOGD("VideoPlayerWin.cpp,setUrl called in state %d.", m_current_state);
+    }
 }
 
 /**
@@ -276,6 +296,11 @@ void VideoPlayerWin::SetUrl(const std::string& url) {
 */
 void VideoPlayerWin::updateVideoFrame(char* src_, char* url, int width, int height, bool flag)
 {
+}
 
+void VideoPlayerWin::UpdateCurrentState(av_player_states state)
+{
+    std::unique_lock<std::mutex> state_lock(m_mutex_state);
+    m_current_state = state;
 }
 

@@ -31,11 +31,19 @@ void executeFFmpeg()
 	}
 }
 
+void testMemory()
+{
+	char* test_char_p = (char*)malloc(10);
+}
+
 int main(int argc, char* argv[])
 {
 	
-	std::thread t_ffmpeg(executeFFmpeg);
-	t_ffmpeg.join();
+	//std::thread t_ffmpeg(executeFFmpeg);
+	//t_ffmpeg.join();
+	testMemory();
+
+	_CrtDumpMemoryLeaks();
 
 	return 0;
 }

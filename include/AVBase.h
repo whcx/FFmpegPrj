@@ -4,6 +4,17 @@
 #include <unordered_map>
 
 #include "FrameQueue.h"
+enum av_player_states {
+    AV_PLAYER_STATE_ERROR       = 0,
+    AV_PLAYER_IDLE              = 1 << 0,
+    AV_PLAYER_INITIALIZED       = 1 << 1,
+    AV_PLAYER_PREPARING         = 1 << 2,
+    AV_PLAYER_PREPARED          = 1 << 3,
+    AV_PLAYER_STARTED           = 1 << 4,
+    AV_PLAYER_PAUSED            = 1 << 5,
+    AV_PLAYER_STOPPED           = 1 << 6,
+    AV_PLAYER_PLAYBACK_COMPLETE = 1 << 7
+};
 
 //typedef void (*UpdateFramePtr)(uint8_t* frame, int width, int height);
 class AVBase

@@ -45,14 +45,13 @@ public:
 private:
     VideoPlayerWin(const VideoPlayerWin& fq) {}
     VideoPlayerWin& operator=(const VideoPlayerWin& fq) {}
+    void DecodeVideo();
+    void GetYUV(const AVFrame* avFrame);
+    void UpdateCurrentState(av_player_states state);
 
 private:
     int const MAX_THREADS_SIZE{2};
-    void DecodeVideo();
-    void GetYUV(const AVFrame* avFrame);
     //static std::shared_ptr<SlaveMaster> m_asset_async_loader_;
-
-    bool prepare_success{false};
     string media_url;
     AVFormatContext* p_format_context = nullptr;
     int64_t i_duration;
@@ -62,8 +61,9 @@ private:
     int i_video_index = -1;
     int i_audio_index = -1;
     int count_frame = 0;
-    //std::mutex m_mutex_l_yuv;
+    std::mutex m_mutex_state;
     //std::condition_variable m_condition_yuv;
     bool loop_playing{false};
-    std::shared_ptr<WriteYuv> p_WriteYuv = nullptr;;
+    std::shared_ptr<WriteYuv> p_WriteYuv = nullptr;
+	av_player_states m_current_state;
 };
